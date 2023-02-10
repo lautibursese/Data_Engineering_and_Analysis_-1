@@ -114,7 +114,6 @@ category_name.clean_to_csv("category_name_translation.csv")
 '''
 
 Geolocation = pd.read_csv("C:/Users/Predator/Desktop/Lauti/Programación/GitHub/2. Data Analytics/#2/datasets/olist_geolocation_dataset.csv")
-geolocation = Preprocessing(Geolocation)
 
 itabatã = Geolocation['geolocation_city'] == 'itabatan'
 barra_do_quarai = Geolocation['geolocation_city'] == 'barrado quarai'
@@ -176,6 +175,7 @@ while i < Geolocation[Specific&Specific2].shape[0]:
     Geolocation.loc[position, 'geolocation_lng'] = geolocator.geocode(f"{Geolocation.loc[position, 'geolocation_city']}, Brasil", timeout=3).longitude
     i += 1
 
+geolocation = Preprocessing(Geolocation)
 geolocation.clean_to_csv("geolocation.csv")
 
 '''
